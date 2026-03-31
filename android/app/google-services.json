@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "415855184786",
+    "project_id": "fitjessie-248a1",
+    "storage_bucket": "fitjessie-248a1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415855184786:android:b983bce887f2193bf84f4b",
+        "android_client_info": {
+          "package_name": "com.example.admin_panel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM6Gg1vgs65sXeJXKXfVdUqISIDzUXUtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
