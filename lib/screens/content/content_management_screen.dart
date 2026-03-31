@@ -361,58 +361,28 @@ class _ContentManagementScreenState extends State<ContentManagementScreen> {
                         child: Container(
                           width: 80,
                           height: 45,
-                          decoration: BoxDecoration(
-                            color: AdminColors.surfaceLight.withValues(
-                              alpha: 0.05,
-                            ),
-                          ),
+                          color: AdminColors.surfaceLight,
                           child: video.thumbnailLink != null
                               ? Image.network(
-                                  // Add a '?' to LH3 links to force a fresh request or bypass some cache issues
                                   video.thumbnailLink!,
                                   fit: BoxFit.cover,
                                   width: 80,
                                   height: 45,
-                                  loadingBuilder:
-                                      (context, child, loadingProgress) {
-                                        if (loadingProgress == null)
-                                          return child;
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 16,
-                                            height: 16,
-                                            child: CircularProgressIndicator(
-                                              strokeWidth: 2,
-                                              value:
-                                                  loadingProgress
-                                                          .expectedTotalBytes !=
-                                                      null
-                                                  ? loadingProgress
-                                                            .cumulativeBytesLoaded /
-                                                        loadingProgress
-                                                            .expectedTotalBytes!
-                                                  : null,
-                                              color: AdminColors.textLow
-                                                  .withValues(alpha: 0.3),
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                  errorBuilder: (context, error, stackTrace) {
-                                    // If we get 429 or CORS, show a "waiting" state or a subtle icon
-                                    return Container(
-                                      width: 80,
-                                      height: 45,
-                                      color: Colors.white.withValues(
-                                        alpha: 0.02,
-                                      ),
-                                    );
-                                  },
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      const Center(
+                                    child: Icon(
+                                      Icons.movie_creation_outlined,
+                                      color: Colors.white54,
+                                      size: 24,
+                                    ),
+                                  ),
                                 )
-                              : const Icon(
-                                  Icons.video_library_outlined,
-                                  color: AdminColors.textLow,
-                                  size: 16,
+                              : const Center(
+                                  child: Icon(
+                                    Icons.video_file_outlined,
+                                    color: Colors.white54,
+                                    size: 24,
+                                  ),
                                 ),
                         ),
                       ),
